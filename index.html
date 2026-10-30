@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100b1d">
+  <title>FR MUSIC | Music Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand"><span>FR</span> MUSIC</div>
+    <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+    <button class="profile-btn" id="profileBtn">👤</button>
+  </header>
+
+  <main>
+    <section id="homePage" class="page active">
+      <div class="welcome">
+        <p class="small">WELCOME TO</p>
+        <h1>FR <span>MUSIC</span></h1>
+        <p>তোমার পছন্দের গান, এক জায়গায়।</p>
+      </div>
+
+      <div class="section-heading">
+        <h2>Discover Music</h2>
+        <span>Explore</span>
+      </div>
+
+      <div class="categories">
+        <button class="chip selected" data-category="All">All</button>
+        <button class="chip" data-category="Song">Songs</button>
+        <button class="chip" data-category="Video">Videos</button>
+        <button class="chip" data-category="Cover">Cover</button>
+      </div>
+
+      <div class="section-heading">
+        <h2>Latest Uploads</h2>
+      </div>
+      <div id="musicList" class="music-list">
+        <p class="empty">এখনো কোনো গান যোগ করা হয়নি।</p>
+      </div>
+    </section>
+
+    <section id="searchPage" class="page">
+      <h2>Search Music</h2>
+      <input id="searchInput" class="text-input"
+        type="search" placeholder="গান বা শিল্পীর নাম লিখুন...">
+      <div id="searchResults" class="music-list"></div>
+    </section>
+
+    <section id="uploadPage" class="page">
+      <h2>Upload Music</h2>
+      <p class="muted">নিজের তৈরি বা আপলোডের অনুমতি আছে এমন গান/ভিডিও দিন।</p>
+
+      <form id="uploadForm">
+        <label>গান বা ভিডিওর নাম</label>
+        <input id="trackTitle" class="text-input" required
+          maxlength="80" placeholder="গানের নাম">
+
+        <label>শিল্পীর নাম</label>
+        <input id="artistName" class="text-input" required
+          maxlength="60" placeholder="শিল্পীর নাম">
+
+        <label>ক্যাটাগরি</label>
+        <select id="trackCategory" class="text-input">
+          <option value="Song">Song</option>
+          <option value="Video">Music Video</option>
+          <option value="Cover">Cover</option>
+        </select>
+
+        <label>গান বা ভিডিও ফাইল</label>
+        <input id="mediaFile" class="text-input"
+          type="file" accept="audio/*,video/mp4,video/webm" required>
+
+        <button class="main-btn" type="submit">＋ Add Music</button>
+      </form>
+      <p id="uploadMessage" class="muted"></p>
+    </section>
+
+    <section id="libraryPage" class="page">
+      <h2>My Library</h2>
+      <p class="muted">এই ডিভাইসে বর্তমানে যোগ করা মিডিয়া।</p>
+      <div id="libraryList" class="music-list"></div>
+    </section>
+
+    <section id="profilePage" class="page">
+      <div class="profile-card">
+        <div class="avatar">FR</div>
+        <h2>FR MUSIC</h2>
+        <p class="muted">Your music space</p>
+        <p>এটি আপাতত একটি প্রিভিউ প্রোফাইল।</p>
+      </div>
+    </section>
+
+    <section id="playerPage" class="page">
+      <button class="back-btn" id="backBtn">← Back</button>
+      <div class="player-art">♫</div>
+      <h2 id="playerTitle">Music title</h2>
+      <p id="playerArtist" class="muted">Artist</p>
+      <div id="mediaPlayer" class="media-player"></div>
+      <div class="player-actions">
+        <button id="likeBtn" class="action-btn">♡ Like</button>
+        <button id="shareBtn" class="action-btn">↗ Share</button>
+        <a id="downloadBtn" class="action-btn" download>↓ Download</a>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-page="homePage">⌂<small>Home</small></button>
+    <button class="nav-btn" data-page="searchPage">⌕<small>Search</small></button>
+    <button class="nav-btn upload-nav" data-page="uploadPage">＋<small>Upload</small></button>
+    <button class="nav-btn" data-page="libraryPage">♫<small>Library</small></button>
+    <button class="nav-btn" data-page="profilePage">◉<small>Profile</small></button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
